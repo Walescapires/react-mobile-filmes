@@ -23,7 +23,7 @@ const FilmesPopulares = ({ navigation }) => {
           <Card.Cover
             source={{ uri: 'https://image.tmdb.org/t/p/w500/' + item.backdrop_path }} />
           <Card.Content>
-            <Text variant="titleLarge">{item.title}</Text>
+            <Text variant="titleLarge"><center>{item.title}</center></Text>
             <Text variant="bodyMedium">{item.overview}</Text>
           </Card.Content>
         </Card>
