@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Card, Text } from 'react-native-paper'
+import { Card, IconButton, Text } from 'react-native-paper'
 import apiFilmes from '../service/apiFilmes'
 import { Image, ScrollView, View } from 'react-native'
 
@@ -52,8 +52,8 @@ const FilmesDetalhes = ({ navigation, route }) => {
                             left={(props) =>
                                 <Image
                                     source={{ uri: 'https://image.tmdb.org/t/p/w500/' + item.profile_path }}
-                                    style={{ width: 40, height: 40, borderRadius: 20 }}
-                                />}
+                                    style={{ width: 40, height: 40, borderRadius: 20 }} />}
+                            right={(props) => <IconButton {...props} icon="chevron-right" />}
                         />
                     </Card>
 
