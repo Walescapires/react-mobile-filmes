@@ -16,7 +16,7 @@ export const SeriesPopulares = ({ navigation, route }) => {
     apiFilmes.get(`/tv/${id}`).then(resultado => {
       setSeries(resultado.data)
     })
-    apiFilmes.get(`/person/${id}/movie_credits`).then(resultado => {
+    apiFilmes.get(`/person/${id}/tv_credits`).then(resultado => {
         setAtores(resultado.data.cast)
       })
 
@@ -50,14 +50,14 @@ export const SeriesPopulares = ({ navigation, route }) => {
         {atores.map(item => (
                     <Card
                         key={item.id} mode='outlined'
-                        onPress={() => navigation.push('filmes-atores', { id: item.id })}
+                        onPress={() => navigation.push('series-populares', { id: item.id })}
                         style={{ marginBottom: 15 }}>
                         <Card.Title
                             title={item.character}
                             subtitle={item.name}
                             left={(props) =>
                                 <Image
-                                    source={{ uri: 'https://image.tmdb.org/t/p/w500/' + item.profile_path }}
+                                    source={{ uri: 'https://image.tmdb.org/t/p/w500/' + item.poster_path }}
                                     style={{ width: 40, height: 40, borderRadius: 20 }} />}
                             right={(props) => <IconButton {...props} icon="chevron-right" />}
                         />

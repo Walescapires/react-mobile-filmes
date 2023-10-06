@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Card, IconButton, Text } from 'react-native-paper'
+
 import { Image, ScrollView, View } from 'react-native'
 import apiFilmes from '../../service/apiFilmes'
 
@@ -13,10 +14,9 @@ const FilmesDetalhes = ({ navigation, route }) => {
         apiFilmes.get(`/movie/${id}`).then(resultado => {
             setFilme(resultado.data)
         })
-        apiFilmes.get(`/person/${id}/movie_credits`).then(resultado => {
+        apiFilmes.get(`/movie/${id}/credits`).then(resultado => {
             setAtores(resultado.data.cast)
-          })
-       
+        })
     }, [])
 
     return (
