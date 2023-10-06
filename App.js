@@ -1,11 +1,11 @@
 import { NavigationContainer } from '@react-navigation/native';
-import FilmesPopulares from './screens/filmes/FilmesPopulares';
 import { PaperProvider } from 'react-native-paper';
-import FilmesDetalhes from './screens/FilmesDetalhes';
-import Atores from './screens/filmes/Atores';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FilmesStack from './screens/filmes/FilmesStack';
+import AtoresStack from './screens/atores/AtoresStack';
+import SeriesStack from './screens/series/SeriesStack';
+
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -26,7 +26,7 @@ export default function App() {
             />
             <Tab.Screen
               name="Series"
-              component={FilmesStack}
+              component={SeriesStack}
               options={{
                 tabBarIcon: () => (
                   <MaterialCommunityIcons name="desktop-mac" size={26} />
@@ -35,7 +35,7 @@ export default function App() {
             />
             <Tab.Screen
               name="Atores"
-              component={FilmesStack}
+              component={AtoresStack}
               options={{
                 tabBarIcon: () => (
                   <MaterialCommunityIcons name="emoticon" size={26} />
